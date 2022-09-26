@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -34,13 +35,23 @@ class HomeTab extends StatelessWidget {
           ),
         ),
         actions: [
-          IconButton(
-            onPressed: () {
-              print('ICON_CART_FROM_HEADER__CLICKED!');
-            },
-            icon: Icon(
-              Icons.shopping_cart,
-              color: CustomColors.customSwatchColor,
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 15,
+              right: 17,
+            ),
+            child: GestureDetector(
+              onTap: () {
+                print('GO TO CART');
+              },
+              child: Badge(
+                badgeColor: CustomColors.customContrastColor,
+                badgeContent: const Text('10'),
+                child: Icon(
+                  Icons.shopping_cart,
+                  color: CustomColors.customSwatchColor,
+                ),
+              ),
             ),
           )
         ],
