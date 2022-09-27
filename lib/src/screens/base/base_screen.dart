@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:greengrocer/src/config/custom_colors.dart';
+import 'package:greengrocer/src/screens/cart/cart_tab.dart';
 import 'package:greengrocer/src/screens/home/home_tab.dart';
 
 class BaseScreen extends StatefulWidget {
@@ -16,13 +17,12 @@ class _BaseScreenState extends State<BaseScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomColors.customSwatchColor,
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
         children: [
           const HomeTab(),
-          Container(color: Colors.yellow),
+          const CartTab(),
           Container(color: Colors.blue),
           Container(color: Colors.brown)
         ],
